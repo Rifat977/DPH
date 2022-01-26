@@ -6,7 +6,7 @@
 • Admin for each school <br/>
 • Lecturers <br/>
 • Student <br/>
-
+• Receptionist <br/>
 
 #### What can user do:- 
 • Reception will add students <br/>
