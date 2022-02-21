@@ -1,39 +1,6 @@
 <template>
   <Head title="Log in" />
 
-
-    <!-- <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-        {{ status }}
-    </div>
-
-    <form @submit.prevent="submit">
-        <div>
-            <BreezeLabel for="email" value="Email" />
-            <BreezeInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />
-        </div>
-
-        <div class="mt-4">
-            <BreezeLabel for="password" value="Password" />
-            <BreezeInput id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="current-password" />
-        </div>
-
-        <div class="block mt-4">
-            <label class="flex items-center">
-                <BreezeCheckbox name="remember" v-model:checked="form.remember" />
-                <span class="ml-2 text-sm text-gray-600">Remember me</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                Forgot your password?
-            </Link>
-
-            <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Log in
-            </BreezeButton>
-        </div>
-    </form> -->
   <div>
     <div class="login-header box-shadow">
       <div
@@ -44,7 +11,7 @@
         </div>
         <div class="login-menu mt-1">
           <ul>
-            <li><a :href="route('register')">Register</a></li>
+            <li><Link :href="route('register')">Register</Link></li>
           </ul>
         </div>
       </div>
@@ -69,23 +36,11 @@
                 <h2 class="text-center text-primary">Login To DIUSmS</h2>
               </div>
                 <BreezeValidationErrors class="mb-4" />
-              <form @submit.prevent="submit">
+              <form>
                 <div class="select-role">
                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn active">
-                      <input type="radio" name="options" id="admin" />
-                      <div class="icon">
-                        <img
-                          src="assets/vendors/images/briefcase.svg"
-                          class="svg"
-                          alt=""
-                        />
-                      </div>
-                      <span>I'm</span>
-                      Manager
-                    </label>
-                    <label class="btn">
-                      <input type="radio" name="options" id="user" />
+                      <input type="radio" name="options" id="student" />
                       <div class="icon">
                         <img
                           src="assets/vendors/images/person.svg"
@@ -94,7 +49,19 @@
                         />
                       </div>
                       <span>I'm</span>
-                      Employee
+                      Student
+                    </label>
+                    <label class="btn">
+                      <input type="radio" name="options" id="teacher" />
+                      <div class="icon">
+                        <img
+                          src="assets/vendors/images/person.svg"
+                          class="svg"
+                          alt=""
+                        />
+                      </div>
+                      <span>I'm</span>
+                      Teacher
                     </label>
                   </div>
                 </div>
@@ -131,7 +98,7 @@
                   </div>
                   <div class="col-6">
                     <div class="forgot-password">
-                      <a v-if="canResetPassword" :href="route('password.request')">Forgot Password</a>
+                      <Link v-if="canResetPassword" :href="route('password.request')">Forgot Password</Link>
                     </div>
                   </div>
                 </div>
@@ -142,9 +109,9 @@
 											<!-- use code for form submit -->
 											<!-- <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In"> -->
 										
-                      <BreezeButton class="btn bg-primary btn-primary btn-lg btn-block" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                      <Button v-on:click="submit" class="btn bg-primary btn-primary btn-lg btn-block" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                       Log in
-                      </BreezeButton>
+                      </Button>
 
                       <!-- <a
                         class="btn btn-primary btn-lg btn-block"
@@ -159,10 +126,9 @@
                       OR
                     </div>
                     <div class="input-group mb-0">
-                      <a :href="route('register')"
+                      <Link :href="route('register')"
                         class="btn btn-outline-primary btn-lg btn-block"
-                        >Register To Create Account</a
-                      >
+                        >Register To Create Account</Link>
                     </div>
                   </div>
                 </div>

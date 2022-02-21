@@ -110,10 +110,10 @@
 						<span class="user-icon">
 							<img src="assets/vendors/images/photo1.jpg" alt="">
 						</span>
-						<span class="user-name">Ross C. Lopez</span>
+						<span class="user-name">{{ $page.props.auth.user.name }}</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
+						<BreezeResponsiveNavLink href="profile.html"><i class="dw dw-user1"></i> Profile</BreezeResponsiveNavLink>
 					
 						<BreezeResponsiveNavLink :href="route('logout')" method="post" as="button">
 							<i class="dw dw-logout"></i> Log Out

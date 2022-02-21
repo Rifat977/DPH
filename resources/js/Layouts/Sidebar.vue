@@ -24,7 +24,7 @@
 					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-dark active">Dark</a>
 				</div>
 
-				<!-- <h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
+				<h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
 				<div class="sidebar-radio-group pb-10 mb-10">
 					<div class="custom-control custom-radio custom-control-inline">
 						<input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-1" checked="">
@@ -66,7 +66,7 @@
 						<input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input" value="icon-list-style-6">
 						<label class="custom-control-label" for="sidebariconlist-6"><i class="dw dw-next"></i></label>
 					</div>
-				</div> -->
+				</div>
 
 				<div class="reset-options pt-30 text-center">
 					<button class="btn btn-danger" id="reset-settings">Reset Settings</button>
@@ -77,24 +77,50 @@
 
     <div class="left-side-bar">
 		<div class="brand-logo">
-			<a href="index.html">
+			<a :href="route('dashboard')">
 				DIUSmS
 			</a>
-			<div class="close-sidebar" data-toggle="left-sidebar-close">
+			<div class="close-sidebar" data-toggle="le ft-sidebar-close">
 				<i class="ion-close-round"></i>
 			</div>
 		</div>
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
-					<li>
-						<a :href="route('dashboard')" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-house-1"></span><span class="mtext">Dashboard</span>
-						</a>
-					</li>
+					<div v-if="$page.props.role.isAdmin">
+						<li>
+							<a :href="route('dashboard')" class="dropdown-toggle no-arrow @if(request()->routeIs('dashboard')) bg-danger @endif">
+								<span class="micon dw dw-house-1"></span><span class="mtext">Dashboard</span>
+							</a>
+						</li>
+						<li>
+							<a :href="route('dashboard')" class="dropdown-toggle no-arrow @if(request()->routeIs('dashboard')) bg-danger @endif">
+								<span class="micon dw dw-user"></span><span class="mtext">Teacher</span>
+							</a>
+						</li>
+						<li>
+							<a :href="route('dashboard')" class="dropdown-toggle no-arrow @if(request()->routeIs('dashboard')) bg-danger @endif">
+								<span class="micon dw dw-user-1"></span><span class="mtext">Student</span>
+							</a>
+						</li>
+					</div>
+					<div v-if="$page.props.role.isTeacher">
+						<li>
+							<a :href="route('dashboard')" class="dropdown-toggle no-arrow @if(request()->routeIs('dashboard')) bg-danger @endif">
+								<span class="micon dw dw-house-1"></span><span class="mtext">Dashboard</span>
+							</a>
+						</li>
+					</div>
+					<div v-if="$page.props.role.isStudent">
+						<li>
+							<a :href="route('dashboard')" class="dropdown-toggle no-arrow @if(request()->routeIs('dashboard')) bg-danger @endif">
+								<span class="micon dw dw-house-1"></span><span class="mtext">Dashboard</span>
+							</a>
+						</li>
+					</div>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Tables</span>
+							<span class="micon dw dw-library"></span><span class="mtext">Demo</span>
 						</a>
 						<ul class="submenu">
 							<li><a href="basic-table.html">Basic Tables</a></li>
@@ -108,3 +134,9 @@
 	</div>
 </div>
 </template>
+
+<script>
+export default{
+	   props: ['userRoles'],
+}
+</script>

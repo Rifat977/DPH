@@ -711,6 +711,9 @@ select {
 .-mr-2 {
   margin-right: -0.5rem;
 }
+.mb-20 {
+  margin-bottom: 5rem;
+}
 .-mr-0\.5 {
   margin-right: -0.125rem;
 }
@@ -723,9 +726,6 @@ select {
 .mb-0 {
   margin-bottom: 0px;
 }
-.mb-20 {
-  margin-bottom: 5rem;
-}
 .block {
   display: block;
 }
@@ -734,9 +734,6 @@ select {
 }
 .inline-flex {
   display: inline-flex;
-}
-.table {
-  display: table;
 }
 .grid {
   display: grid;
@@ -955,9 +952,6 @@ select {
 .p-2 {
   padding: 0.5rem;
 }
-.p-0 {
-  padding: 0px;
-}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1024,11 +1018,11 @@ select {
 .pb-10 {
   padding-bottom: 2.5rem;
 }
-.pt-10 {
-  padding-top: 2.5rem;
-}
 .pb-0 {
   padding-bottom: 0px;
+}
+.pt-10 {
+  padding-top: 2.5rem;
 }
 .text-left {
   text-align: left;

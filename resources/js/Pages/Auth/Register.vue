@@ -19,6 +19,8 @@
             <BreezeInput id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="new-password" />
         </div>
 
+        <input type="hidden" id="user_type" v-model="form.user_type" name="user_type"/>
+
         <div class="mt-4">
             <BreezeLabel for="password_confirmation" value="Confirm Password" />
             <BreezeInput id="password_confirmation" type="password" class="mt-1 block w-full" v-model="form.password_confirmation" required autocomplete="new-password" />
@@ -29,7 +31,7 @@
                 Already registered?
             </Link>
 
-            <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+            <BreezeButton class="ml-4 btn bg-dark text-light" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                 Register
             </BreezeButton>
         </div>
@@ -64,6 +66,7 @@ export default {
                 password: '',
                 password_confirmation: '',
                 terms: false,
+                user_type: 'admin'
             })
         }
     },

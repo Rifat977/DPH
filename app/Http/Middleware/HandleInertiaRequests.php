@@ -2,8 +2,13 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Middleware;
+use phpDocumentor\Reflection\PseudoTypes\True_;
+
 
 class HandleInertiaRequests extends Middleware
 {
@@ -37,6 +42,11 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'role' => [
+                'isAdmin' => Auth::user() ? $request->user()->hasRole('admin') : false ,
+                'isTeacher' => Auth::user() ? $request->user()->hasRole('teacher') : false,
+                'isStudent' => Auth::user() ? $request->user()->hasRole('student') : false,
+            ]
         ]);
     }
 }
