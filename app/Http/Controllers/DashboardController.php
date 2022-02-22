@@ -17,4 +17,9 @@ class DashboardController extends Controller
             return Inertia::render('Student/Dashboard');
         }
     }
+
+    public function teacher(){
+         return 'Hello teacher';
+    }
+
 }

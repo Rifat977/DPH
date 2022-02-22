@@ -89,17 +89,17 @@
 				<ul id="accordion-menu">
 					<div v-if="$page.props.role.isAdmin">
 						<li>
-							<a :href="route('dashboard')" class="dropdown-toggle no-arrow @if(request()->routeIs('dashboard')) bg-danger @endif">
+							<a :href="route('dashboard')" class="dropdown-toggle no-arrow">
 								<span class="micon dw dw-house-1"></span><span class="mtext">Dashboard</span>
 							</a>
 						</li>
 						<li>
-							<a :href="route('dashboard')" class="dropdown-toggle no-arrow @if(request()->routeIs('dashboard')) bg-danger @endif">
+							<a :href="route('teacher')" class="dropdown-toggle no-arrow">
 								<span class="micon dw dw-user"></span><span class="mtext">Teacher</span>
 							</a>
 						</li>
 						<li>
-							<a :href="route('dashboard')" class="dropdown-toggle no-arrow @if(request()->routeIs('dashboard')) bg-danger @endif">
+							<a :href="route('student')" class="dropdown-toggle no-arrow">
 								<span class="micon dw dw-user-1"></span><span class="mtext">Student</span>
 							</a>
 						</li>

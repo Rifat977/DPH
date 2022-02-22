@@ -29,6 +29,8 @@ use Inertia\Inertia;
     // return Inertia::render('Dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/teacher', [DashboardController::class, 'teacher'])->middleware(['auth', 'verified'])->name('teacher');
+Route::get('/student', [DashboardController::class, 'student'])->middleware(['auth', 'verified'])->name('student');
 
 
 
