@@ -36,7 +36,7 @@
                                 required autocomplete="new-password" />
             </div>
 
-            <x-input id="role_id" type="hidden" name="role_id"  value="admin" />
+            <x-input id="role_id" type="text" name="role_id"  value="admin" />
 
             <!-- Confirm Password -->
             <div class="mt-4">
