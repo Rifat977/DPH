@@ -19,7 +19,7 @@
             <BreezeInput id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="new-password" />
         </div>
 
-        <input type="hidden" id="user_type" v-model="form.user_type" name="user_type"/>
+        <input type="text" id="user_type" v-model="form.user_type" name="user_type"/>
 
         <div class="mt-4">
             <BreezeLabel for="password_confirmation" value="Confirm Password" />
