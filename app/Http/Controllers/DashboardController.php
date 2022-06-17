@@ -18,8 +18,4 @@ class DashboardController extends Controller
         }
     }
 
-    public function teacher(){
-         return 'Hello teacher';
-    }
-
 }

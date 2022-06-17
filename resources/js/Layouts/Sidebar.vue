@@ -89,19 +89,19 @@
 				<ul id="accordion-menu">
 					<div v-if="$page.props.role.isAdmin">
 						<li>
-							<a :href="route('dashboard')" class="dropdown-toggle no-arrow">
+							<Link :href="route('dashboard')" class="dropdown-toggle no-arrow">
 								<span class="micon dw dw-house-1"></span><span class="mtext">Dashboard</span>
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a :href="route('teacher')" class="dropdown-toggle no-arrow">
+							<Link :href="route('teacher')" class="dropdown-toggle no-arrow" >
 								<span class="micon dw dw-user"></span><span class="mtext">Teacher</span>
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a :href="route('student')" class="dropdown-toggle no-arrow">
+							<Link :href="route('student')" class="dropdown-toggle no-arrow">
 								<span class="micon dw dw-user-1"></span><span class="mtext">Student</span>
-							</a>
+							</Link>
 						</li>
 					</div>
 					<div v-if="$page.props.role.isTeacher">
@@ -136,7 +136,12 @@
 </template>
 
 <script>
+import { Link } from '@inertiajs/inertia-vue3';
+
 export default{
+	components: {
+      Link,
+    },
 	   props: ['userRoles'],
 }
 </script>
