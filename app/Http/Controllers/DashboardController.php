@@ -13,7 +13,7 @@ class DashboardController extends Controller
             return Inertia::render('Student/Dashboard');
        }else if(Auth::user()->hasRole('teacher')){
             return Inertia::render('Teacher/Dashboard');
-       }else
+       }else{
             return Inertia::render('Admin/Dashboard');
         }
     }
